@@ -10,28 +10,28 @@ from telethon.tl.functions.messages import ExportChatInviteRequest
 @Zaid.on(events.callbackquery.CallbackQuery(data="admin"))
 async def _(event):
 
-    await event.edit(ADMIN_TEXT, buttons=[[Button.inline("« Bᴀᴄᴋ", data="help")]])
+    await event.edit(ADMIN_TEXT, buttons=[[Button.inline("« گەڕانەوە", data="help")]])
 
 @Zaid.on(events.callbackquery.CallbackQuery(data="play"))
 async def _(event):
 
-    await event.edit(PLAY_TEXT, buttons=[[Button.inline("« Bᴀᴄᴋ", data="help")]])
+    await event.edit(PLAY_TEXT, buttons=[[Button.inline("« گەڕانەوە", data="help")]])
 
 
 ADMIN_TEXT = """
-**✘ A module from which admins of the chat can use!**
+**✘ تەنیا بەڕێوبەرەکان دەتوانن ئەم فەرمانانە بەکاربهێنن**
 
-‣ `?end` - To End music streaming.
-‣ `?skip` - To Skip Tracks Going on.
-‣ `?pause` - To Pause streaming.
-‣ `?resume` - to Resume Streaming.
-‣ `?leavevc` - force The Userbot to leave Vc Chat (Sometimes Joined).
-‣ `?playlist` - to check playlists.
+‣ `/end` - بۆ کۆتایی هاتنی پەخشکردن
+‣ `/skip` - بۆ تێپەڕاندنی پەخشکراو
+‣ `/pause` - بۆ وەستاندنی پەخشکردن
+‣ `/resume` - بۆ دەستپێکردنەوەی پەخشکردن
+‣ `/leavevc` - جێهێشتنی ناچاری.
+‣ `/playlist` - لیستی پەخشکراوەکان.
 """
 
 PLAY_TEXT = """
-**✘ A module from which users of the chat can use!**
+**✘ فەرمانە ئاساییەکانی بەکارهێنەر**
 
-‣ `?play` - To Play Audio from Else Reply to audio file.
-‣ `?vplay` - To Stream Videos (HEROKU_MODE > Doesn't support).
+‣ `/play` - بۆ پەخشکردنی کلیپی دەنگی
+‣ `/vplay` - بۆ پەخشکردنی ڤیدیۆ (HEROKU_MODE > Doesn't support).
 """
