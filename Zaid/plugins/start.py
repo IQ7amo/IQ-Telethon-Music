@@ -3,15 +3,17 @@ from Config import Config
 from telethon import events, Button
 
 PM_START_TEXT = """
-ʜᴇʏᴀ! {}
+🕷️🖤 بەخێربێیت بەڕێزم{}!
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-✘ **ɪ'ᴍ ᴀ ꜱɪᴍᴘʟᴇ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴜꜱɪᴄ ᴀɴᴅ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ**.
-‣ **ɪ ᴄᴀɴ ᴘʟᴀʏ ꜱᴏɴɢꜱ ɪɴ ʏᴏᴜʀ ᴠᴏɪᴄᴇ**.
-‣ **ɪ ʜᴀᴠᴇ ᴀʟᴍᴏꜱᴛ ᴀʟʟ ꜰᴇᴀᴛᴜʀᴇꜱ ᴡʜɪᴄʜ ɴᴇᴇᴅꜱ ᴀ ᴍᴜꜱɪᴄ ʙᴏᴛ**
-‣ **ᴛʜɪꜱ ʙᴏᴛ ʙᴀꜱᴇᴅ ᴏɴ ᴛᴇʟᴇᴛʜᴏɴ. ꜱᴏ ɪᴛ'ꜱ ᴘʀᴏᴠɪᴅᴇ ᴍᴏʀᴇ ꜱᴛᴀʙɪʟɪᴛʏ ꜰʀᴏᴍ ᴏᴛʜᴇʀ ʙᴏᴛꜱ**!
-‣ **ɪ ᴄᴀɴ ᴅᴏ ᴏᴛʜᴇʀ ᴛʜɪɴɢꜱ ʟɪᴋᴇ ᴘɪɴꜱ ᴇᴛᴄꜱ**.
+✘
+‣ من بۆتێکی سادەم بۆ پاراستنی گروپەکەت و پەخشکردنی کلیپی دەنگی لە پەیوەندییەکدا.
+‣ دەتوانم کلیپی دەنگی لە کاتی پەیوەندیدا لێبدەم.
+‣ دەتوانم هەر بەکارهێنەرێک بلۆک بکەم و بێدەنگ بکەم.
+‣ باشترین بۆت لە ڕووی تایبەتمەندییەوە.
+‣ لەسەر بنەمای کتێبخانەی Telethon دروستکراوە بۆیە بۆتەکە خێرایە!
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-✘ **ᴄʟɪᴄᴋ ᴏɴ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ 🔘 ꜰᴏʀ ᴍᴏʀᴇ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ℹ️**.
+➖➖➖➖➖➖➖➖➖➖➖➖➖➖
+✘ ** بەهیوای کاتێکی خۆش بەسەر بەریت لەگەڵ بۆتەکە**.
 """
 
 @Zaid.on(events.NewMessage(pattern="^[?!/]start$"))
@@ -24,12 +26,12 @@ async def start(event):
              caption=PM_START_TEXT.format(event.sender.first_name),  buttons=[
         [Button.url("➕ بۆ زیادکردنم ئێرە دابگرە", f"https://t.me/{BOT_USERNAME}?startgroup=true")],
         [Button.url("👾 خاوەنی بۆت", "https://t.me/IQ7amo")],
-        [Button.url("🗣️ پشتگیری", f"https://t.me/{Config.SUPPORT}"), Button.url("📣 ᴜᴘᴅᴀᴛᴇꜱ", f"https://t.me/{Config.CHANNEL}")],
+        [Button.url("🗣️ پشتگیری", f"https://t.me/{Config.SUPPORT}"), Button.url("📣 کەناڵ", f"https://t.me/{Config.CHANNEL}")],
         [Button.inline("فەرمانەکان", data="help")]])
        return
 
     if event.is_group:
-       await event.reply("**ʜᴇʏ! ɪ'ᴍ ꜱᴛɪʟʟ ᴀʟɪᴠᴇ ✅**")
+       await event.reply("**بە سەرکەوتوویی کاردەکەم**")
        return
 
 
@@ -42,6 +44,6 @@ async def _(event):
        await event.edit(PM_START_TEXT.format(event.sender.first_name), buttons=[
         [Button.url("➕ بۆ زیادکردنم ئێرە دابگرە", f"https://t.me/{BOT_USERNAME}?startgroup=true")],
         [Button.url("👾 خاوەنی بۆت", "https://t.me/IQ7amo")],
-        [Button.url("🗣️ پشتگیری", f"https://t.me/{Config.SUPPORT}"), Button.url("📣 ᴜᴘᴅᴀᴛᴇꜱ", f"https://t.me/{Config.CHANNEL}")],
+        [Button.url("🗣️ پشتگیری", f"https://t.me/{Config.SUPPORT}"), Button.url("📣 کەناڵ", f"https://t.me/{Config.CHANNEL}")],
         [Button.inline("فەرمانەکان", data="help")]])
        return
