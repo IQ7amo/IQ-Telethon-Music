@@ -27,11 +27,11 @@ async def _(e, perm):
         umm = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         if len(e.text) > 6:
             bc = umm[0]
-            text = "Joining..."
+            text = "لە هاتن دایە"
             event = await e.reply(text, parse_mode=None, link_preview=None )
             try:
                 await client(functions.channels.JoinChannelRequest(channel=bc))
-                await event.edit("Succesfully Joined if not joined Use !pjoin and your group link")
+                await event.edit("بە سەرکەوتوویی پەیوەندیت بەگرووپەکە کرد ئەگەر بەژدار نەبوو !pjoin بنێرە")
             except Exception as e:
                 await event.edit(str(e))   
         else:
@@ -47,11 +47,11 @@ async def _(e, perm):
         umm = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         if len(e.text) > 7:
             invitelink = umm[0]
-            text = "Joining...."
+            text = "لە هاتن دایە ..."
             event = await e.reply(text, parse_mode=None, link_preview=None )
             try:
                 await client(ImportChatInviteRequest(invitelink))
-                await event.edit("Succesfully Joined")
+                await event.edit("بە سەرکەوتوویی پەیوەندی کرد")
             except Exception as e:
                 await event.edit(str(e))   
         else:
