@@ -21,12 +21,11 @@ async def start(event):
     if event.is_private:
        await event.client.send_file(event.chat_id,
              Config.START_IMG,
-             caption=PM_START_TEXT.format(event.sender.first_name), 
-             buttons=[
-        [Button.url("➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ᴄʜᴀᴛ", f"https://t.me/{BOT_USERNAME}?startgroup=true")],
-        [Button.url("👨‍💻 ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", "https://github.com/ITZ-ZAID/Telethon-Music")],
-        [Button.url("🗣️ ꜱᴜᴘᴘᴏʀᴛ", f"https://t.me/{Config.SUPPORT}"), Button.url("📣 ᴜᴘᴅᴀᴛᴇꜱ", f"https://t.me/{Config.CHANNEL}")],
-        [Button.inline("ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅꜱ", data="help")]])
+             caption=PM_START_TEXT.format(event.sender.first_name),  buttons=[
+        [Button.url("➕ بۆ زیادکردنم ئێرە دابگرە", f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+        [Button.url("👾 خاوەنی بۆت", "https://t.me/IQ7amo")],
+        [Button.url("🗣️ پشتگیری", f"https://t.me/{Config.SUPPORT}"), Button.url("📣 ᴜᴘᴅᴀᴛᴇꜱ", f"https://t.me/{Config.CHANNEL}")],
+        [Button.inline("فەرمانەکان", data="help")]])
        return
 
     if event.is_group:
@@ -41,8 +40,8 @@ async def _(event):
         return
     if event.is_private:
        await event.edit(PM_START_TEXT.format(event.sender.first_name), buttons=[
-        [Button.url("➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ᴄʜᴀᴛ", f"https://t.me/{BOT_USERNAME}?startgroup=true")],
-        [Button.url("👨‍💻 ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", "https://github.com/ITZ-ZAID/Telethon-Music")],
-        [Button.url("🗣️ ꜱᴜᴘᴘᴏʀᴛ", f"https://t.me/{Config.SUPPORT}"), Button.url("📣 ᴜᴘᴅᴀᴛᴇꜱ", f"https://t.me/{Config.CHANNEL}")],
-        [Button.inline("ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅꜱ", data="help")]])
+        [Button.url("➕ بۆ زیادکردنم ئێرە دابگرە", f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+        [Button.url("👾 خاوەنی بۆت", "https://t.me/IQ7amo")],
+        [Button.url("🗣️ پشتگیری", f"https://t.me/{Config.SUPPORT}"), Button.url("📣 ᴜᴘᴅᴀᴛᴇꜱ", f"https://t.me/{Config.CHANNEL}")],
+        [Button.inline("فەرمانەکان", data="help")]])
        return
