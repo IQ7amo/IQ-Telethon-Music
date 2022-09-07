@@ -4,10 +4,9 @@ from Config import Config
 
 
 btn =[
-    [Button.inline("Admin", data="admin"), Button.inline("Play", data="play")],
-    [Button.inline("Home", data="start")]]
-
-HELP_TEXT = "Welcome To help Menu Section\n\nClick on the Buttons!"
+    [Button.inline("بەڕێوبەر", data="admin"), Button.inline("Play", data="play")],
+    [Button.inline("سەرەکی", data="start")]]
+HELP_TEXT = "بەخێربێن بۆ لیستی فەرمانەکانی Telethon سەرچاوە\n\nکلیك لە دوگمەکانی خوارەوە بکە:"
 
 
 @Zaid.on(events.NewMessage(pattern="[!?/]help"))
