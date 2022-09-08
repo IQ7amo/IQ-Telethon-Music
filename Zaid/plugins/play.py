@@ -422,7 +422,7 @@ async def vc_playlist(event, perm):
                 link_preview=False,
             )
         else:
-            PLAYLIST = f"**🎧 PLAYLIST:**\n**• [{chat_queue[0][0]}]({chat_queue[0][2]})** | `{chat_queue[0][3]}` \n\n**• Upcoming Streaming:**"
+            PLAYLIST = f"**🎧 لیستی پەخشکراوەکان:**\n**• [{chat_queue[0][0]}]({chat_queue[0][2]})** | `{chat_queue[0][3]}` \n\n**• کلیپە چاوەڕوانکراوەکان:**"
             l = len(chat_queue)
             for x in range(1, l):
                 hmm = chat_queue[x][0]
@@ -432,7 +432,7 @@ async def vc_playlist(event, perm):
                     f"**#{x}** - [{hmm}]({hmmm}) | `{hmmmm}`"
             await event.reply(PLAYLIST, link_preview=False)
     else:
-        await event.reply("**Ntg is Streaming**")
+        await event.reply("**هیچ شتێك پەخشنەکراوە**")
 
 
 
@@ -440,10 +440,10 @@ async def vc_playlist(event, perm):
 
 
 #leavevc
-@Zaid.on(events.NewMessage(pattern="^[?!/]leavevc"))
+@Zaid.on(events.NewMessage(pattern="^[?!/]leave"))
 @is_admin
 async def leavevc(event, perm):
-    xnxx = await event.reply("Processing")
+    razan = await event.reply("Processing")
     chat_id = event.chat_id
     from_user = vcmention(event.sender)
     if from_user:
@@ -451,9 +451,9 @@ async def leavevc(event, perm):
             await call_py.leave_group_call(chat_id)
         except (NotInGroupCallError, NoActiveGroupCall):
             pass
-        await xnxx.edit("**Left the voice chat** `{}`".format(str(event.chat_id)))
+        await razan.edit("**چاتی دەنگی جێهێشت** `{}`".format(str(event.chat_id)))
     else:
-        await xnxx.edit(f"**Sorry {owner} not on Voice Chat**")
+        await razan.edit(f"**ببوورە {owner} لەچاتی دەنگیدا بەکاردێت**")
 
 
 
@@ -464,17 +464,17 @@ async def vc_skip(event, perm):
     if len(event.text.split()) < 2:
         op = await skip_current_song(chat_id)
         if op == 0:
-            await event.reply("**Nothing Is Streaming**")
+            await event.reply("**هیچ شتێك پەخشنەکراوە**")
         elif op == 1:
-            await event.reply("empty queue, leave voice chat", 10)
-        else:
-            await event.reply(
-                f"**⏭ Skipped**\n**🎧 Now Playing** - [{op[0]}]({op[1]})",
-                link_preview=False,
+            await event.reply("**لیستەکە بەتاڵ بووە، بۆیە پەیوەندییەکەم جێهێشت**")
+        else
+            await event.reply
+                f"**⏭ پەڕێندرا**\n**🎧 ئێستا کاردەکات** - [{op[0]}]({op[1]})",
+                link_preview=False
             )
     else:
         skip = event.text.split(maxsplit=1)[1]
-        DELQUE = "**Removing Following Songs From Queue:**"
+        DELQUE = "**سڕینەوەی ئەوانەی تر لە لیستی پەخشکراو :**"
         if chat_id in QUEUE:
             items = [int(x) for x in skip.split(" ") if x.isdigit()]
             items.sort(reverse=True)
@@ -493,11 +493,11 @@ async def vc_pause(event, perm):
     if chat_id in QUEUE:
         try:
             await call_py.pause_stream(chat_id)
-            await event.reply("**Streaming Paused**")
+            await event.reply("**پەخشکردن وەستێنرا**")
         except Exception as e:
-            await event.reply(f"**ERROR:** `{e}`")
+            await event.reply(f"**هەڵەیە:** `{e}`")
     else:
-        await event.reply("**Nothing Is Playing**")
+        await event.reply("**هیچ شتێك پەخشنەکراوە**")
 
 
 
@@ -508,11 +508,11 @@ async def vc_resume(event, perm):
     if chat_id in QUEUE:
         try:
             await call_py.resume_stream(chat_id)
-            await event.reply("**Streaming Started Back 🔙**")
+            await event.reply("**پەخشکردن دەستی پێکردەوە 🔙**")
         except Exception as e:
-            await event.reply(f"**ERROR:** `{e}`")
+            await event.reply(f"**هەڵەیە:** `{e}`")
     else:
-        await event.reply("**Nothing Is Streaming**")
+        await event.reply("**هیچ شتێك پەخشنەکراوە**")
 
 
 @call_py.on_stream_end()
