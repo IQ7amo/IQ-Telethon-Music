@@ -5,8 +5,14 @@
     "repository": "https://github.com/ITZ-ZAID/Telethon-Music",
   "stack": "container",
     "env": {
+        "APP_ID": {
+            "description": "لێره ئاپ ئایدی ئاکاونتی یارمه تێده ر بنوسه"
+        },
+        "API_HASH": {
+            "description": "لێره ئاپ هاش ئاکاونتی یارمه تێده ر بنوسه"
+        },
         "STRING_SESSION": {
-            "description": "fill with the telethon session string",
+            "description": "لێره کۆدی تیرموکسی ئاکاونتی یارمه تێده ر بنوسه ",
             "required": true
         },
         "HEROKU_MODE": {
