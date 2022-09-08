@@ -6,7 +6,7 @@
   "stack": "container",
     "env": {
         "STRING_SESSION": {
-            "description": "fill with the telethon session string from https://replit.com/@Itz-zaid/Generator",
+            "description": "fill with the telethon session string",
             "required": true
         },
         "HEROKU_MODE": {
@@ -17,22 +17,22 @@
         "SUPPORT": {
             "description": "Fill there your group username else leave",
             "required": false,
-            "value": "TheSupportChat"
+            "value": "IQerenh"
         },
         "CHANNEL": {
             "description": "Fill there your Channel username else leave",
             "required": false,
-            "value": "TheUpdatesChannel"
+            "value": "xv7amo"
         },
         "BOT_USERNAME": {
             "description": "Fill there your bot username",
             "required": false,
-            "value": "Zaid2_Robot"
+            "value": "IQ_Musicbot"
         },
         "ASSISTANT_ID": {
             "description": "Fill there your Assistant id",
             "required": true,
-            "value": "1669178360"
+            "value": "5489968883"
         },
         "BOT_TOKEN": {
             "description": "fill with your bot token get from @BotFather on telegram",
