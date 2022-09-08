@@ -31,14 +31,14 @@ async def _(e, perm):
             event = await e.reply(text, parse_mode=None, link_preview=None )
             try:
                 await client(functions.channels.JoinChannelRequest(channel=bc))
-                await event.edit("بە سەرکەوتوویی پەیوەندیت بەگرووپەکە کرد ئەگەر بەژدار نەبوو !pjoin بنێرە")
+                await event.edit("بە سەرکەوتوویی پەیوەندیت بەگرووپەکە کرد ئەگەر بەژدار نەبوو /pjoin بنێرە")
             except Exception as e:
                 await event.edit(str(e))   
         else:
             await e.reply(usage, parse_mode=None, link_preview=None )
 
 
-@Zaid.on(events.NewMessage(pattern="^[!?/]pjoin ?(.*)"))
+@Zaid.on(events.NewMessage(pattern="^[!?/]pjoin (.*)"))
 @is_admin        
 async def _(e, perm):
     chat_id = e.chat_id
