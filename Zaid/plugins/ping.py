@@ -7,5 +7,5 @@ from Zaid import *
 
 @Zaid.on(events.NewMessage(pattern="^/ping"))
 async def _(event):
-    UMM = [[Button.url("⚜ Cԋαɳɳҽʅ ⚜", "https://t.me/TheUpdatesChannel")]]
+    UMM = [[Button.url("⚜ Cԋαɳɳҽʅ ⚜", "https://t.me/xv7amo")]]
     await event.reply("Pong", buttons=UMM)
