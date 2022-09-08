@@ -15,7 +15,7 @@ MISC_HELP = """
 بۆ پیشاندانی زانیاری بەکارهێنەر بە وەڵامدانەوەی
 """
 
-@Zaid.on(events.NewMessage(pattern="^[!?/]Id"))
+@Zaid.on(events.NewMessage(pattern="^[!?/]id"))
 async def id(event):
 
     if event.is_private:
@@ -34,7 +34,7 @@ async def id(event):
 
     await event.reply(f"بەکارهێنەر {msg.sender.first_name} /n ناسنامە `{msg.sender_id}`.")
  
-@Zaid.on(events.NewMessage(pattern="^[!?/]info ?(.*)"))
+@Zaid.on(events.NewMessage(pattern="^[!?/]info"))
 async def info(event):
 
     sed = await Zaid(P(user_id=event.sender_id, offset=42, max_id=0, limit=80))
