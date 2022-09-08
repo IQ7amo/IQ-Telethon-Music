@@ -9,13 +9,13 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 MISC_HELP = """
 **چەند فەرمانێکی ئاسایی بۆ پیشاندانی ناسنامەی کەسێك**
-/id
+/Id
 ئەم فەرمانە بە وەڵامدانەوە بەکاردێت بۆ پیشاندانی ناسنامە
 /info
 بۆ پیشاندانی زانیاری بەکارهێنەر بە وەڵامدانەوەی
 """
 
-@Zaid.on(events.NewMessage(pattern="^[!?/]ID"))
+@Zaid.on(events.NewMessage(pattern="^[!?/]Id"))
 async def id(event):
 
     if event.is_private:
