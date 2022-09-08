@@ -1,17 +1,17 @@
 from telethon import events, Button
-from JE313P import JE313P
-from JE313P.status import *
+from Zaid import Zaid
+from Zaid.status import *
 import time
 
 PR_HELP = """
 **✘ ئەمە لیستی فەرمانەکانی پاککردنەوەیە تایبەتە بەمن
-‣ `پاککردنەوە`
+‣ `/clear`
 بە وەڵامدانەوەی نامەیەك بۆ پاککردنەوەی
-‣ `سڕینەوە`
+‣ `/delet`
 وەڵامی نامەیەك بدەرەوە بۆ سڕینەوەی
 """
 
-@JE313P.on(events.NewMessage(pattern=r"^[?!]پاککردنەوە"))
+@Zaid.on(events.NewMessage(pattern=r"^[?!]clear"))
 @is_admin
 async def purge_messages(event, perm):
     if not perm.delete_messages:
@@ -41,7 +41,7 @@ async def purge_messages(event, perm):
 
 
 
-@JE313P.on(events.NewMessage(pattern="^[!?/]سڕینەوە$"))
+@Zaid.on(events.NewMessage(pattern="^[!?/]delet$"))
 @is_admin
 async def delete_messages(event, perm):
     if not perm.delete_messages:
@@ -55,6 +55,6 @@ async def delete_messages(event, perm):
     await msg.delete()
     await event.delete()
 
-@JE313P.on(events.callbackquery.CallbackQuery(data="purges"))
+@Zaid.on(events.callbackquery.CallbackQuery(data="purges"))
 async def _(event):
     await event.edit(PR_HELP, buttons=[[Button.inline("گەڕانەوە", data="help")]])
